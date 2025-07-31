@@ -1,25 +1,33 @@
-import tkinter as tk
+import tkinter as tk #Importa todo tkinter, lo llamas tk
+from tkinter import ttk #Solo importa el submódulo ttk, sin sobrenombre o import tkinter.ttk as ttk
+from tkinter import PhotoImage
+
+window_width = 500
+window_height = 400
 
 def windowSetting():
+    # Crear ventana principal
     root = tk.Tk()
-    root.title('Hi baby I love you so much')
-
-    window_width = 500
-    window_height = 400
-
+    icon = PhotoImage(file='image.png')
+    
+    root.title('For you 💕')
+    root.iconphoto(True, icon)
+    root.configure(bg='lightblue')
     # get the screen dimension
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
-
     # find the center point
     center_x = int(screen_width/2 - window_width / 2)
     center_y = int(screen_height/2 - window_height / 2)
 
     # set the position of the window to the center of the screen
     root.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
-
     root.resizable(False, False)
 
-
+    # Crear un frame con padding
+    frame = ttk.Frame(root, padding=10)
+    frame.grid()    
+    
+    # Ejecutar la ventana
     root.mainloop()
 windowSetting()
