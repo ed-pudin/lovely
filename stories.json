@@ -1,0 +1,40 @@
+[
+  {
+    "title": "Just a game",
+    "id": "just_a_game",
+    "description": "In a match of SMITE, across the five chaotic game modes and countless warriors, two players had no idea that destiny was loading beside them. You’re playing Surt, a fiery giant of chaos. The battle begins. On your team: a Merlin and an Artemis unassuming gods, just like any other. But something about Artemis’s playstyle catches your attention. It’s graceful. Thoughtful. Human.",
+    "choices": [
+      {
+        "title": "Keep playing normally, but stay close to Artemis",
+        "id": "curious_connection"
+      },
+      {
+        "title": "Keep playing without interest",
+        "id": "focus_connection"
+      },
+      {
+        "title": "Send Artemis a whisper: \"Good job 👏👍\"",
+        "id": "first_connection"
+      }
+    ]
+  },
+  {
+    "title": "Close to Artemis",
+    "id": "curious_connection",
+    "description": "You don’t really care about your teammates. You’re here to win. But something… draws your attention. Not the objectives.  Not the chaos of the battlefield. It’s her. The Artemis on your team. Precise. Unafraid. She doesn’t ping. She simply moves and you start moving with her. Merlin is solid too. He holds the backline. Helps with cooldowns. Keeps the team breathing. But Artemis is different. Then, out of nowhere… a whisper pops up on your screen. “Hey… can I send you a friend request?” You hesitate. Just a game, right?",
+    "choices": [
+      {
+        "title": "Accept the request and add her on Discord",
+        "id": "begin_connection"
+      },
+      {
+        "title": "Ignore it. You don’t mix games with people",
+        "id": "missed_chance"
+      },
+      {
+        "title": "Say: \"Only if you promise to carry on to the next game.\"",
+        "id": "flirty_banter"
+      }
+    ]
+  }
+]
