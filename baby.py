@@ -1,6 +1,7 @@
 import tkinter as tk #Importa todo tkinter, lo llamas tk
 from tkinter import ttk #Solo importa el submódulo ttk, sin sobrenombre o import tkinter.ttk as ttk
 from tkinter import PhotoImage
+import json
 
 window_width = 500
 window_height = 400
@@ -30,4 +31,17 @@ def windowSetting():
     
     # Ejecutar la ventana
     root.mainloop()
-windowSetting()
+
+def read_json(root):
+    # Open and load the JSON file
+    with open('stories.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    # Print the content
+    print(data)
+
+def main():
+    windowSetting()
+    read_json()
+
+main()

@@ -1,40 +1,237 @@
-[
-  {
-    "title": "Just a game",
-    "id": "just_a_game",
-    "description": "In a match of SMITE, across the five chaotic game modes and countless warriors, two players had no idea that destiny was loading beside them. You’re playing Surt, a fiery giant of chaos. The battle begins. On your team: a Merlin and an Artemis unassuming gods, just like any other. But something about Artemis’s playstyle catches your attention. It’s graceful. Thoughtful. Human.",
-    "choices": [
-      {
-        "title": "Keep playing normally, but stay close to Artemis",
-        "id": "curious_connection"
-      },
-      {
-        "title": "Keep playing without interest",
-        "id": "focus_connection"
-      },
-      {
-        "title": "Send Artemis a whisper: \"Good job 👏👍\"",
-        "id": "first_connection"
-      }
-    ]
-  },
-  {
-    "title": "Close to Artemis",
-    "id": "curious_connection",
-    "description": "You don’t really care about your teammates. You’re here to win. But something… draws your attention. Not the objectives.  Not the chaos of the battlefield. It’s her. The Artemis on your team. Precise. Unafraid. She doesn’t ping. She simply moves and you start moving with her. Merlin is solid too. He holds the backline. Helps with cooldowns. Keeps the team breathing. But Artemis is different. Then, out of nowhere… a whisper pops up on your screen. “Hey… can I send you a friend request?” You hesitate. Just a game, right?",
-    "choices": [
-      {
-        "title": "Accept the request and add her on Discord",
-        "id": "begin_connection"
-      },
-      {
-        "title": "Ignore it. You don’t mix games with people",
-        "id": "missed_chance"
-      },
-      {
-        "title": "Say: \"Only if you promise to carry on to the next game.\"",
-        "id": "flirty_banter"
-      }
-    ]
+{
+  "title": "SMITE Love Story Interactive",
+  "scenes": {
+    "first_touch": {
+      "text": "In a match of SMITE, across the five chaotic game modes and countless warriors, two players had no idea that destiny was loading beside them. You’re playing Surt, a fiery giant of chaos. The battle begins. On your team: a Merlin and an Artemis—unassuming gods, just like any other. But something about Artemis’s playstyle catches your attention. It’s graceful. Thoughtful. Human.",
+      "choices": [
+        {
+          "text": "Keep playing normally, but stay close to Artemis",
+          "next_scene": "curious_connection"
+        },
+        {
+          "text": "Keep playing without interest",
+          "next_scene": "focus_connection"
+        }
+      ]
+    },
+    "curious_connection": {
+      "text": "You don’t really care about your teammates. You’re here to win. But something… draws your attention. Not the objectives. Not the chaos of the battlefield. It’s her. The Artemis on your team. Precise. Unafraid. She doesn’t ping. She simply moves, and you start moving with her. Then, out of nowhere… a whisper pops up on your screen: 'Hey… can I send you a friend request?' You hesitate. Just a game, right?",
+      "choices": [
+        {
+          "text": "Accept the request and add her on Discord",
+          "next_scene": "begin_connection"
+        },
+        {
+          "text": "Ignore it. You don’t mix games with people",
+          "next_scene": "missed_chance"
+        },
+        {
+          "text": "Say: 'Only if you promise to carry me next game.'",
+          "next_scene": "flirty_banter"
+        }
+      ]
+    },
+    "begin_connection": {
+      "text": "You accept. Seconds later, a friend request on Discord. Her name pops up. You feel nervous but reply: 'Good job 👏👍' She responds immediately: 'You were fun to play with, also very kind.' One game becomes five. Then a week of nights spent online. Somehow, a tiny request became the beginning of everything.",
+      "ending": "Destiny Unlocked",
+      "choices": [
+        {
+          "text": "Break the silence with a joke",
+          "next_scene": "break_silence"
+        },
+        {
+          "text": "Push her to talk more, even if she’s not ready",
+          "next_scene": "trust_misplaced"
+        },
+        {
+          "text": "Say nothing, but stay",
+          "next_scene": "silent_stay"
+        }
+      ]
+    },
+    "missed_chance": {
+      "text": "You say nothing. The match ends. You close the screen. You try to forget about it. But something lingers… The way you played together. The way she typed that message. What if?",
+      "ending": "The Match That Could’ve Been",
+      "choices": [
+        {
+          "text": "You finally message her, even if it's late",
+          "next_scene": "delayed_hope"
+        },
+        {
+          "text": "Queue up again, hoping to find her by chance",
+          "next_scene": "serendipity_retry"
+        },
+        {
+          "text": "Let it go and never message her again",
+          "next_scene": "closed_ending"
+        }
+      ]
+    },
+    "flirty_banter": {
+      "text": "You reply: 'Only if you promise to carry me next game too.' Artemis replies instantly: 'Deal. But only if you stop stealing all the kills 😤' You both laugh. The mood is lighter now. You win. Barely. But it feels like more than just a victory. She asks for your Discord, and before long, you’re talking more about life than the game. And one night she says: 'I didn’t expect to meet someone like you here.'",
+      "ending": "From Banter to Bond",
+      "choices": [
+        {
+          "text": "‘If we win the next game, you have to send me a picture.’",
+          "next_scene": "playful_challenge"
+        },
+        {
+          "text": "‘You know, if we keep talking like this, I’m going to start thinking you’re flirting with me.’",
+          "next_scene": "suggestive_tease"
+        }
+      ]
+    },
+    "focus_connection": {
+      "text": "You shake your head and shift your focus back to the game. There's no time for distractions, not even the kind that makes your heart twitch unexpectedly. The team pulls through. Victory. Just another match in your history. You close the client, no friend requests accepted. No messages answered. Just silence—and for now, that feels safe.",
+      "choices": [
+        {
+          "text": "Start a romantic ‘what could’ve been’ journey",
+          "next_scene": "alterative_line"
+        },
+        {
+          "text": "Do nothing",
+          "next_scene": "closed_ending"
+        }
+      ]
+    },
+    "alterative_line": {
+      "text": "You never planned on finding anything unusual in West Virginia. It was just a trip. One quiet afternoon in a bar, you overhear a girl talking behind you: 'Yeah, I like Artemis in SMITE.' Your breath catches. You turn and ask, 'What’s your in-game name?' 'Pudin,' she says. It’s her.",
+      "ending": "A Perfect Place",
+      "choices": [
+        {
+          "text": "Walk over and say: 'Pudin? From SMITE? I can’t believe it’s actually you.'",
+          "next_scene": "direct_approach"
+        },
+        {
+          "text": "Sit nearby and wait for the right moment to catch her eye",
+          "next_scene": "subtle_move"
+        }
+      ]
+    },
+    "closed_ending": {
+      "text": "You never see her again. Maybe it was one of those once-in-a-lifetime matches. Maybe she deleted the game. Or changed her name. You tell yourself it didn’t matter. But sometimes, in the quiet moments, when you hear the SMITE menu music play… You wonder what would’ve happened if you'd just typed one word: 'Sure.'",
+      "ending": "Closed Ending"
+    },
+    "break_silence": {
+      "text": "‘You know... if someone accuses you of murder one day, the police will definitely arrest you. You’re way too quiet—they’ll just assume you’re guilty.’ Silence. Then a laugh. A real one. That laugh broke the tension like glass shattering. You didn’t even care that you lost the match.",
+      "choices": [
+        {
+          "text": "Message her the next day",
+          "next_scene": "straight_communication"
+        },
+        {
+          "text": "Sing a song",
+          "next_scene": "sing_song"
+        }
+      ]
+    },
+    "straight_communication": {
+      "text": "Passing the days, you realize something about her is desirable. You find out she’s from Mexico, and you’re from Georgia. You type: 'It’s not really thatttt far. Just a couple of miles, kilometers.'",
+      "ending": "From Mexico to Georgia",
+      "choices": [
+        {
+          "text": "Wait for her to suggest meeting",
+          "next_scene": "mx_ga"
+        },
+        {
+          "text": "Tell her you’ll travel to Mexico",
+          "next_scene": "ga_mx"
+        }
+      ]
+    },
+    "sing_song": {
+      "text": "You know she’s nervous and shy, but you take the lead, hoping humor will make her comfortable. Deep down, you’re dying to hear her voice.",
+      "ending": "Being Humorist"
+    },
+    "trust_misplaced": {
+      "text": "She logged off, but the game doesn’t feel fun anymore. You stare at your screen, wondering if you ruined something delicate too soon.",
+      "choices": [
+        {
+          "text": "Keep it up and do nothing",
+          "next_scene": "unlocked_ending"
+        },
+        {
+          "text": "Message her to apologize",
+          "next_scene": "resume_connection"
+        },
+        {
+          "text": "Let her be. If she wants to come back, she will.",
+          "next_scene": "reunion_goodbye"
+        }
+      ]
+    },
+    "unlocked_ending": {
+      "text": "You close the game. No message. You let the silence stretch. Her name fades on your friends list—not removed, just buried. One night, long after, you see her online. You hover over the 'message' button. And you don’t click it. Some people walk into your life like whispers. And leave like ghosts.",
+      "ending": "Unlocked Ending"
+    },
+    "resume_connection": {
+      "text": "You type: 'Hey… I’m sorry if I pushed you too much.' You wait. She’s online. The 'typing…' bubble vanishes. Finally: 'It’s okay.' Polite. Distant. Later, you check your friends list. Her name isn’t there anymore.",
+      "ending": "Resume Connection"
+    },
+    "reunion_goodbye": {
+      "text": "You close Discord. No message. Days pass. Then one night, her name pops up in the lobby: 'Wanna queue again?' You smile. Maybe goodbye wasn’t forever.",
+      "ending": "Just Friends"
+    },
+    "silent_stay": {
+      "text": "You don’t push. You just… stay. You play. You listen. At the end of the match, she types: 'I’m sorry I didn’t talk, but I liked your voice.' You reply: 'Your voice is <3<3'—even when she didn’t speak at all.",
+      "choices": [
+        {
+          "text": "Invite a friend next time to help her feel confident",
+          "next_scene": "friend_established"
+        },
+        {
+          "text": "Encourage her to feel comfortable",
+          "next_scene": "encouragement"
+        }
+      ]
+    },
+    "friend_established": {
+      "text": "You invite a friend, hoping it helps her feel at ease. She says she’s not ready yet but appreciates your thoughtfulness. You realize… you made her feel safe. And that safety could be the start of something sweet.",
+      "ending": "First Real Love"
+    },
+    "encouragement": {
+      "text": "You say: 'No pressure ever to talk. But I liked having you there.' Over time, she begins to say little things. A laugh. A 'Hi.' You don’t rush her. You just stay. And that’s what builds trust—slow, steady warmth.",
+      "ending": "Voice Found"
+    },
+    "direct_approach": {
+      "text": "She tilts her head, a little confused — but then recognition sparks in her eyes. 'Ohhh… it’s you.' You laugh, the tension melting away. She gestures to the empty seat beside her. The conversation starts with SMITE but soon becomes something more. Hours pass. When you stand to leave, you both hesitate. That quiet, unspoken question hangs between you: When will we see each other again?",
+      "ending": "Direct Approach"
+    },
+    "subtle_move": {
+      "text": "Her eyes soften in instant recognition. Without hesitation, she crosses the space between you and sits down. 'Guess fate’s got good matchmaking after all.' The conversation flows—unforced, like you’ve been saving words for this day. She admits she stayed up thinking about that one match because it reminded her of you. Time stops mattering. All you notice is her smile, her voice, the way she leans in. Somewhere deep down, you realize: this might be the moment everything changes.",
+      "ending": "Subtle Move"
+    },
+    "mx_ga": {
+      "text": "Months later, she’s finally coming to you. The moment you see her walking down the airport path, everything disappears except her. 'Hi, baby,' you say, voice full of everything you’ve felt. She smiles in that way that makes your chest ache. You can tell she’s wishing you’d just kiss her already. And in that instant, you know—this isn’t just the end of a wait. It’s the beginning.",
+      "ending": "From Mexico to Georgia"
+    },
+    "ga_mx": {
+      "text": "It’s your first time flying alone. Airports aren’t your thing—too many people, too much noise—but none of that matters. You’re coming to see *her*. You’d renewed your passport, dug up your birth certificate, endured endless lines. Now, standing in the terminal with your heart pounding, you know it’s worth it. Because at the end of this trip… she’ll be there.",
+      "ending": "From Georgia to Mexico"
+    },
+    "drunk_truths": {
+      "text": "You start opening up about things you’ve never told anyone before, your voice steady but heart racing. She listens, really listens. When she speaks, it’s with a warmth that seeps through the distance. By the call’s end, you’ve crossed into a different kind of connection—one built on trust that can’t be taken back. You’ve found your person. Your home.",
+      "ending": "Drunk Truths"
+    },
+    "the_promise": {
+      "text": "Without thinking, you say: 'One day, I’ll be there when this happens. No screens. No calls. Just me, making sure you’re okay.' She goes quiet, then whispers: 'I’d like that.' It’s simple, but in that moment, it feels like a promise you’re determined to keep. The miles will disappear. Because it’s her who you want.",
+      "ending": "The Promise"
+    },
+    "send_pic": {
+      "text": "You snap a quick, natural photo and send it. 'Fair’s fair.' Her reply is instant: 'Cute.' That one word lands like a thunderbolt. She adds: 'We make a good-looking team.' You both know she’s not just talking about SMITE anymore.",
+      "ending": "Picture Exchange"
+    },
+    "hot_pic": {
+      "text": "You send a daring picture—a smirk, a flattering angle. Her reply: '…Okay, wow. Didn’t know we were playing like *that*.' The rest of the match is a blur. Neither of you is paying attention anymore. Later that night, your phone buzzes. No words, just a picture. Hotter than yours. A perfect checkmate. The game between you isn’t about kills anymore—it’s about pulling each other closer, one risk at a time.",
+      "ending": "Hot Exchange"
+    },
+    "double_down": {
+      "text": "You don’t back away. 'If we’re going to flirt, I’m going to win that too.' She snorts. 'Oh yeah? Big words.' The match becomes less about victory and more about out-charming each other. By the end, neither remembers the score. All you remember is her laugh lingering in your ears, and the urge to text her again.",
+      "ending": "Double Down"
+    },
+    "soft": {
+      "text": "You surprise her: 'Honestly, I just like talking to you. Game or no game.' She goes quiet. Then: 'Same. That’s… really nice to hear.' The night turns quieter, softer. No teasing, just two voices sharing space in the quiet hum of your headsets. Waiting till it repeats again.",
+      "ending": "Soft Landing"
+    }
   }
-]
+}
