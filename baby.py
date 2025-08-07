@@ -10,6 +10,7 @@ class StoryApp:
         self.current_scene = "first_touch"
         self.story_data = None
         self.chapter_name = "First Touch";
+        self.no_choice_but_next_scene = False;
 
         self.setup_window()
         self.load_story()
@@ -20,7 +21,7 @@ class StoryApp:
         self.window = tk.Tk()
         
         try:
-            icon = PhotoImage(file='image.png')
+            icon = PhotoImage(file='heart.png')
             self.window.iconphoto(True, icon)
         except:
             print("No se encontró el icono, usando predeterminado")
@@ -69,6 +70,8 @@ class StoryApp:
             messagebox.showerror("Error", f"Escena '{self.current_scene}' no encontrada")
             return
         
+        if "ending" in scene:
+                self.chapter_name = scene['ending'];
          # Mostrar ending si existe
         if self.chapter_name != '':
             ending_label = ttk.Label(
@@ -81,8 +84,6 @@ class StoryApp:
                 background="#c108ff"
             )
             ending_label.pack(pady=5, anchor="center")
-            if "ending" in scene:
-                self.chapter_name = scene['ending'];
         
         # Mostrar texto de la escena
         text_label = ttk.Label(
@@ -126,7 +127,15 @@ class StoryApp:
             restart_btn.pack(pady=20, anchor='s')
             ending_label.destroy()
             self.chapter_name = "First Touch";
-    
+
+            if scene["next_scene"]:
+                self.no_choice_but_next_scene = True
+            else:
+                self.no_choice_but_next_scene = False;
+        
+        if self.no_choice_but_next_scene:
+            self.make_choice(scene['next_scene'])
+
     def make_choice(self, next_scene):
         """Maneja la selección de una opción"""
         self.current_scene = next_scene

@@ -75,7 +75,7 @@
           "next_scene": "friends_discord"
         },
         {
-          "text": "You notice and admire her style of laying and you decide to ask her to play ranked joust next time",
+          "text": "You decide to ask her to play ranked joust next time",
           "next_scene": "ranked_joust"
         }
       ]
@@ -84,7 +84,7 @@
       "text": "She’s not just friendly, kind and dangerous in the right hands. Definitely duo material, she's the perfect mix of skill and heart. Exactly the kind of teammate you dream about. So you dare to ask if she wants to be your duo and she accepts. And just like that, a great duo in this game is born."
     },
     "friends_discord":{
-      "text": ": You started to talk to her, you sent your picture and she sent her picture back. She’s beautiful, you got into her that’s how you decide to talk to her everyday. ",
+      "text": "You started to talk to her, you sent your picture and she sent her picture back. She’s beautiful, you got into her that’s how you decide to talk to her everyday. ",
       "next_scene": "first_real_love"
     },
     "first_real_love": {
@@ -200,8 +200,7 @@
     },
     "closed_ending": {
       "text": "You never see her again. Maybe it was one of those once-in-a-lifetime matches. Maybe she deleted the game. Or changed her name. You tell yourself it didn’t matter. But sometimes, in the quiet moments, when you hear the SMITE menu music play… You wonder what would’ve happened if you'd just typed one word: 'Sure.'",
-      "ending": "Closed Ending",
-      "next_scene": "closed_ending"
+      "ending": "Closed Ending"
     },
     "break_silence": {
       "text": "‘You know... if someone accuses you of murder one day, the police will definitely arrest you. You’re way too quiet—they’ll just assume you’re guilty.’ Silence. Then a laugh. A real one. That laugh broke the tension like glass shattering. You didn’t even care that you lost the match.",
