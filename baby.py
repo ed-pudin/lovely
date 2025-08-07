@@ -9,7 +9,8 @@ class StoryApp:
         self.window_height = 500
         self.current_scene = "first_touch"
         self.story_data = None
-        
+        self.chapter_name = "First Touch";
+
         self.setup_window()
         self.load_story()
         self.show_scene()
@@ -25,7 +26,7 @@ class StoryApp:
             print("No se encontró el icono, usando predeterminado")
         
         self.window.title('For you 💕')
-        self.window.configure(bg="#B934A8")  # Color de fondo rosa claro
+        self.window.configure(bg="#c108ff")  # Color de fondo rosa claro
         
         # Centrar ventana
         screen_width = self.window.winfo_screenwidth()
@@ -37,7 +38,7 @@ class StoryApp:
         self.window.resizable(True, True)
         
         # Frame principal
-        self.main_frame = tk.Frame(self.window, padx=10, background='#B934A8')
+        self.main_frame = tk.Frame(self.window, padx=10, background='#c108ff')
         self.main_frame.pack(fill=tk.BOTH, expand=True)
         
     
@@ -68,30 +69,32 @@ class StoryApp:
             messagebox.showerror("Error", f"Escena '{self.current_scene}' no encontrada")
             return
         
+         # Mostrar ending si existe
+        if self.chapter_name != '':
+            ending_label = ttk.Label(
+                self.main_frame,
+                text=f"Chapter : {self.chapter_name}",
+                wraplength=self.window_width - 15,
+                font=('Helvetica', 12, 'bold italic'),
+                foreground="#FFEA00",
+                justify="left",
+                background="#c108ff"
+            )
+            ending_label.pack(pady=5, anchor="center")
+            if "ending" in scene:
+                self.chapter_name = scene['ending'];
+        
         # Mostrar texto de la escena
         text_label = ttk.Label(
             self.main_frame,
             text=scene["text"],
             wraplength=self.window_width-15,
             font=('Helvetica', 12),
-            background="#B934A8",
+            background="#c108ff",
             justify="left",
             foreground='white'
         )
         text_label.pack(pady=(10))
-        
-        # Mostrar ending si existe
-        if "ending" in scene:
-            ending_label = ttk.Label(
-                self.main_frame,
-                text=f"Next chapter : {scene['ending']}",
-                wraplength=self.window_width - 15,
-                font=('Helvetica', 12, 'bold italic'),
-                foreground="#E9D500",
-                justify="left",
-                background="#B934A8"
-            )
-            ending_label.pack(pady=5, anchor="center")
         
         # Mostrar opciones si existen
         if "choices" in scene:
@@ -99,7 +102,7 @@ class StoryApp:
                 self.main_frame,
                 text="\nWhat do you do?",
                 font=('Helvetica', 12, 'bold'),
-                background="#B934A8",
+                background="#c108ff",
                 foreground='white'
             )
             choices_label.pack(anchor='w', pady=(0,20))
@@ -122,6 +125,7 @@ class StoryApp:
             )
             restart_btn.pack(pady=20, anchor='s')
             ending_label.destroy()
+            self.chapter_name = "First Touch";
     
     def make_choice(self, next_scene):
         """Maneja la selección de una opción"""
