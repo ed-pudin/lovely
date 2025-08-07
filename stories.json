@@ -255,7 +255,10 @@
     },
     "encouragement": {
       "text": "You say: 'No pressure ever to talk. But I liked having you there.' Over time, she begins to say little things. A laugh. A 'Hi.' You don’t rush her. You just stay. And that’s what builds trust—slow, steady warmth.",
-      "ending": "Voice Found"
+      "next_scene": "Voice Found"
+    },
+    "voice_found":{
+
     },
     "direct_approach": {
       "text": "She tilts her head, a little confused — but then recognition sparks in her eyes. 'Ohhh… it’s you.' You laugh, the tension melting away. She gestures to the empty seat beside her. The conversation starts with SMITE but soon becomes something more. Hours pass. When you stand to leave, you both hesitate. That quiet, unspoken question hangs between you: When will we see each other again?",
