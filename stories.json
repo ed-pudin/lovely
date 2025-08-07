@@ -80,16 +80,16 @@
         }
       ]
     },
+    "ranked_joust":{
+      "text": "She’s not just friendly, kind and dangerous in the right hands. Definitely duo material, she's the perfect mix of skill and heart. Exactly the kind of teammate you dream about. So you dare to ask if she wants to be your duo and she accepts. And just like that, a great duo in this game is born."
+    },
     "friends_discord":{
       "text": ": You started to talk to her, you sent your picture and she sent her picture back. She’s beautiful, you got into her that’s how you decide to talk to her everyday. ",
       "next_scene": "first_real_love"
     },
     "first_real_love": {
-      "text": " You started to talk to her, you sent your picture and she sent her picture back. She’s beautiful, you got into her that’s how you decide to talk to her everyday. ",
-      "next_scene": "end_first_real_love"
-    },
-    "end_first_real_love":{
-      "text": "You started talking more, the words flowing easier now that the ice was broken. One night, almost without thinking, you sent her a picture of yourself. A pause. Then, her reply came a photo of her, smiling softly, like the moment had been waiting for both of you. She was beautiful. Not just in the obvious way, but in the kind of way that made you want to memorize her face, the curve of her smile, the light in her eyes. Something shifted in you. The game that brought you together suddenly felt like the smallest part of the story. From that day on, talking to her became your favorite part of every day, a constant, a comfort, a pull you didn’t want to fight. Somewhere between matches and midnight conversations, you knew: you didn’t just want to play the game with her. You wanted to be part of her world. "
+      "text": "You started talking more, the words flowing easier now that the ice was broken. One night, almost without thinking, you sent her a picture of yourself. A pause. Then, her reply came a photo of her, smiling softly, like the moment had been waiting for both of you. She was beautiful. Not just in the obvious way, but in the kind of way that made you want to memorize her face, the curve of her smile, the light in her eyes. Something shifted in you. The game that brought you together suddenly felt like the smallest part of the story. From that day on, talking to her became your favorite part of every day, a constant, a comfort, a pull you didn’t want to fight. Somewhere between matches and midnight conversations, you knew: you didn’t just want to play the game with her. You wanted to be part of her world. ",
+      "ending": "First Real Love"
     },
     "serendipity_retry":{
       "text": "You log in. Same time. Same mode. Just in case. It feels silly. Maybe even desperate. But then… Familiar username. You freeze. She’s on your team. You ping an objective like old times. This time, she types: “You came back.”",
@@ -113,19 +113,19 @@
     },
     "what_happened_yest":{
       "text": "What started as a casual match turned into a night you’ll never forget. One playful request for a call, and suddenly her voice is in your ears warm, unguarded, and touched with a tipsy boldness that makes her laugh more freely than usual. You find yourself chasing that sound, throwing out jokes just to hear it again. The game ends, but the conversation doesn’t. From silly talk about donkeys outside your window to her teasing complaints about a noisy fan, the night feels oddly intimate. But when the laughter fades into panic, you stay. Calm words, steady tone, promising she’s safe. You wish you could cross the distance in an instant. That night leaves a mark one you’ll think about every time you remember how her voice sounded when she let her guard down.",
+      "ending": "What happened yesterday",
       "choices": [{
-        "text": "You open up",
-        "next_scene": "drunk_truths"
-      },
-      {
-        "text": "Make a promise",
-        "next_scene": "the_promise"
-      }
-
+          "text": "You open up",
+          "next_scene": "drunk_truths"
+        },
+        {
+          "text": "Make a promise",
+          "next_scene": "the_promise"
+        }
       ]
     },
     "flirty_banter": {
-      "text": "You reply: 'Only if you promise to carry me next game too.' Artemis replies instantly: 'Deal. But only if you stop stealing all the kills 😤' You both laugh. The mood is lighter now. You win. Barely. But it feels like more than just a victory. She asks for your Discord, and before long, you’re talking more about life than the game. And one night she says: 'I didn’t expect to meet someone like you here.'",
+      "text": "You reply: 'Only if you promise to carry me next game too.' Artemis replies instantly: 'Deal. But only if you stop stealing all the kills' You both laugh. The mood is lighter now. You win. Barely. But it feels like more than just a victory. She asks for your Discord, and before long, you’re talking more about life than the game. And one night she says: 'I didn’t expect to meet someone like you here.'",
       "ending": "From Banter to Bond",
       "choices": [
         {
@@ -135,6 +135,39 @@
         {
           "text": "‘You know, if we keep talking like this, I’m going to start thinking you’re flirting with me.’",
           "next_scene": "suggestive_tease"
+        }
+      ]
+    },
+    "suggestive_tease":{
+      "text": "She doesn’t reply right away, and for a second you wonder if you pushed too far. Then: “And what if I am?” Your fingers hover over the keyboard. The match continues, but you’re barely paying attention. “Then I guess I’ll have to flirt back.” Her next message is simple: “Good. I was hoping you’d say that.” From then on, every word between you feels charged.",
+      "next_scene": "not_as_spicy"
+    },
+    "not_as_spicy":{
+      "text": "The air between you changes thicker now, charged with something neither of you has to name. The game’s still going, but the real match is happening in the way your words dance around each other. Every line feels like it’s balancing on the edge of a dare.",
+      "ending": "Not as spicy as jalapeños",
+      "choices": [
+        {
+          "text": "Double down",
+          "next_scene": "double_down"
+        },
+        {
+          "text": "Go soft instead of spicy ",
+          "next_scene": "soft"
+        }
+      ]
+
+    },
+    "playful_challenge":{
+      "text" : "You stare at her picture longer than you should. It’s more than just a photo it’s a little piece of her world that she decided to share with you. There’s a confidence in her smile, a sparkle in her eyes that says she knows exactly what she’s doing. It’s your move now, and you realize… how you respond might change everything.",
+      "ending" : "Playful Challenge",
+      "choices" : [
+        {
+          "text": "Send your picture right away.",
+          "next_scene": "send_pic"
+        },
+        {
+          "text": "Send your picture right away.",
+          "next_scene": "hot_pic"
         }
       ]
     },
@@ -167,7 +200,8 @@
     },
     "closed_ending": {
       "text": "You never see her again. Maybe it was one of those once-in-a-lifetime matches. Maybe she deleted the game. Or changed her name. You tell yourself it didn’t matter. But sometimes, in the quiet moments, when you hear the SMITE menu music play… You wonder what would’ve happened if you'd just typed one word: 'Sure.'",
-      "ending": "Closed Ending"
+      "ending": "Closed Ending",
+      "next_scene": "closed_ending"
     },
     "break_silence": {
       "text": "‘You know... if someone accuses you of murder one day, the police will definitely arrest you. You’re way too quiet—they’ll just assume you’re guilty.’ Silence. Then a laugh. A real one. That laugh broke the tension like glass shattering. You didn’t even care that you lost the match.",
@@ -205,7 +239,11 @@
     },
     "sing_song": {
       "text": "You know she’s nervous and shy, but you take the lead, hoping humor will make her comfortable. Deep down, you’re dying to hear her voice.",
-      "ending": "Being Humorist"
+      "ending": "Being Humoristic",
+      "next_scene": "being_humoristic"
+    },
+    "being_humoristic":{
+      "text": "You know she’s nervous and shy, but you decide to take the lead in the conversation, hoping that being a little funnier might make her feel comfortable enough to speak. Deep down, you’re dying to hear her voice not just the occasional giggle, but words, sentences, her rhythm. So you throw out little jokes, testing the waters. Some fall flat, met with that shy silence that makes you wonder if she’s smiling or hiding. Others earn you a soft laugh, the kind that hits your chest like a spark. And in those moments, the quiet doesn’t feel heavy anymore it feels like a game you both know how to play. The match fades into the background. You’re not watching the scoreboard. You’re listening for the next laugh."
     },
     "trust_misplaced": {
       "text": "She logged off, but the game doesn’t feel fun anymore. You stare at your screen, wondering if you ruined something delicate too soon.",
@@ -225,16 +263,14 @@
       ]
     },
     "unlocked_ending": {
-      "text": "You close the game. No message. You let the silence stretch. Her name fades on your friends list—not removed, just buried. One night, long after, you see her online. You hover over the 'message' button. And you don’t click it. Some people walk into your life like whispers. And leave like ghosts.",
-      "ending": "Unlocked Ending"
+      "text": "You close the game. No message. You let the silence stretch. Her name fades on your friends list—not removed, just buried. One night, long after, you see her online. You hover over the 'message' button. And you don’t click it. Some people walk into your life like whispers. And leave like ghosts."
     },
     "resume_connection": {
-      "text": "You type: 'Hey… I’m sorry if I pushed you too much.' You wait. She’s online. The 'typing…' bubble vanishes. Finally: 'It’s okay.' Polite. Distant. Later, you check your friends list. Her name isn’t there anymore.",
-      "ending": "Resume Connection"
+      "text": "You type: 'Hey… I’m sorry if I pushed you too much.' You wait. She’s online. The 'typing…' bubble vanishes. Finally: 'It’s okay.' Polite. Distant. Later, you check your friends list. Her name isn’t there anymore."
     },
     "reunion_goodbye": {
       "text": "You close Discord. No message. Days pass. Then one night, her name pops up in the lobby: 'Wanna queue again?' You smile. Maybe goodbye wasn’t forever.",
-      "ending": "Just Friends"
+      "next_scene": "just_friends"
     },
     "silent_stay": {
       "text": "You don’t push. You just… stay. You play. You listen. At the end of the match, she types: 'I’m sorry I didn’t talk, but I liked your voice.' You reply: 'Your voice is <3<3'—even when she didn’t speak at all.",
@@ -251,17 +287,34 @@
     },
     "friend_established": {
       "text": "You invite a friend, hoping it helps her feel at ease. She says she’s not ready yet but appreciates your thoughtfulness. You realize… you made her feel safe. And that safety could be the start of something sweet.",
-      "ending": "First Real Love"
+      "next_scene": "first_real_love"
     },
     "encouragement": {
       "text": "You say: 'No pressure ever to talk. But I liked having you there.' Over time, she begins to say little things. A laugh. A 'Hi.' You don’t rush her. You just stay. And that’s what builds trust—slow, steady warmth.",
-      "next_scene": "Voice Found"
+      "next_scene": "voice_found"
     },
     "voice_found":{
-
+      "text": "She’s still nervous, afraid you might leave because of her English and her struggle to be fluent. She’s hard on herself, always expecting perfection, but you keep reassuring her mistakes are how she’ll learn. For you, that effort means everything. Slowly, she starts sending you voice messages every night, talking about her day. You love it, because it means she’s thinking of you before she sleeps. And that’s a feeling you can’t help but treasure.",
+      "ending":  "Voice Found",
+      "choices": [
+        {
+          "text": "Confess she has a sexy businesswoman voice",
+          "next_scene": "sexy_voice"
+        },
+        {
+          "text": "Ask her to read something for you anything just to hear her voice longer",
+          "next_scene": "read_for_me"
+        }
+      ]
+    },
+    "sexy_voice": {
+      "text": "That night, after listening to her latest audio, you can’t help yourself. You say, 'You know… If I’m honest… you’ve got this sexy businesswoman voice. The kind that could close a deal or break a heart in one sentence.' Her reply comes with a soft laugh, the kind that makes your chest warm. 'Stop… you’re making me blush.' But the next night, her audio is longer, smoother, like she’s aware now of what her voice does to you and you realize her voice has quietly become your favorite addiction that you will not leave so easily."
+    },
+    "read_for_me": {
+      "text": "You’re obsessed with her voice now, not just with her gameplay, her laugh, her face, but the way every word she speaks wraps around you. You want more. So you ask her to read The Raven, a poem by Edgar Allan Poe, for you, just so you can hear her voice again. She accepts, but with one condition: you have to read to her too, so she can hear your voice in return. It feels like something that was always meant to happen, a quiet exchange of words and hearts. You’re hopeful for what’s next… and already craving it"
     },
     "direct_approach": {
-      "text": "She tilts her head, a little confused — but then recognition sparks in her eyes. 'Ohhh… it’s you.' You laugh, the tension melting away. She gestures to the empty seat beside her. The conversation starts with SMITE but soon becomes something more. Hours pass. When you stand to leave, you both hesitate. That quiet, unspoken question hangs between you: When will we see each other again?",
+      "text": "She tilts her head, a little confused but then recognition sparks in her eyes. 'Ohhh… it’s you.' You laugh, the tension melting away. She gestures to the empty seat beside her. The conversation starts with SMITE but soon becomes something more. Hours pass. When you stand to leave, you both hesitate. That quiet, unspoken question hangs between you: When will we see each other again?",
       "ending": "Direct Approach"
     },
     "subtle_move": {
@@ -269,7 +322,7 @@
       "ending": "Subtle Move"
     },
     "mx_ga": {
-      "text": "The first flight after months of talking about it — she’s finally coming to you. Both of you had been counting the days, and now it’s real. You’re nervous, your hands can’t keep still, but the moment you see her walking down the path from the arrival gate, everything else disappears. “Hi, baby,” you say, your voice soft but full of everything you’ve felt these past months. She looks incredible, even more than you’d imagined and in her eyes, there’s a spark that sets something alight inside you. You want to freeze this moment, live in it forever.  “Hi, baby,” she replies, smiling in that way that makes your chest ache. You can tell she’s wishing you’d just kiss her already. And in that instant, you know this isn’t just the end of a wait. It’s the beginning of everything you’ve been hoping for and never imagined it would happen",
+      "text": "The first flight after months of talking about it she’s finally coming to you. Both of you had been counting the days, and now it’s real. You’re nervous, your hands can’t keep still, but the moment you see her walking down the path from the arrival gate, everything else disappears. “Hi, baby,” you say, your voice soft but full of everything you’ve felt these past months. She looks incredible, even more than you’d imagined and in her eyes, there’s a spark that sets something alight inside you. You want to freeze this moment, live in it forever.  “Hi, baby,” she replies, smiling in that way that makes your chest ache. You can tell she’s wishing you’d just kiss her already. And in that instant, you know this isn’t just the end of a wait. It’s the beginning of everything you’ve been hoping for and never imagined it would happen",
       "ending": "From Mexico to Georgia"
     },
     "ga_mx": {
