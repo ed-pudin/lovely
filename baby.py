@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import PhotoImage, messagebox
 import json
+import random
 
 class StoryApp:
     def __init__(self):
@@ -9,9 +10,11 @@ class StoryApp:
         self.window_height = 500
         self.current_scene = "first_touch"
         self.story_data = None
-        self.chapter_name = "First Touch";
-        self.no_choice_but_next_scene = False;
+        self.chapter_name = "First Touch"
+        self.no_choice_but_next_scene = False
+        self.index = -1
 
+        self.load_phrases()
         self.setup_window()
         self.load_story()
         self.show_scene()
@@ -39,7 +42,7 @@ class StoryApp:
         self.window.resizable(True, True)
         
         # Frame principal
-        self.main_frame = tk.Frame(self.window, padx=10, background='#c108ff')
+        self.main_frame = tk.Frame(self.window, padx=10, background="#c108ff")
         self.main_frame.pack(fill=tk.BOTH, expand=True)
         
     
@@ -48,6 +51,17 @@ class StoryApp:
         try:
             with open('stories.json', 'r', encoding='utf-8') as f:
                 self.story_data = json.load(f)
+        except FileNotFoundError:
+            messagebox.showerror("Error", "No se encontró el archivo stories.json")
+            self.window.destroy()
+        except json.JSONDecodeError:
+            messagebox.showerror("Error", "El archivo JSON tiene errores de formato")
+            self.window.destroy()
+    
+    def load_phrases(self):
+        try:
+            with open('phrases.json', 'r', encoding='utf-8') as p:
+                self.phrases = json.load(p)
         except FileNotFoundError:
             messagebox.showerror("Error", "No se encontró el archivo stories.json")
             self.window.destroy()
@@ -71,7 +85,7 @@ class StoryApp:
             return
         
         if "ending" in scene:
-                self.chapter_name = scene['ending'];
+                self.chapter_name = scene['ending']
          # Mostrar ending si existe
         if self.chapter_name != '':
             ending_label = ttk.Label(
@@ -89,7 +103,7 @@ class StoryApp:
         text_label = ttk.Label(
             self.main_frame,
             text=scene["text"],
-            wraplength=self.window_width-15,
+            wraplength=self.window_width-20,
             font=('Helvetica', 12),
             background="#c108ff",
             justify="left",
@@ -120,22 +134,44 @@ class StoryApp:
             # Si no hay opciones, mostrar botón para reiniciar
             restart_btn = ttk.Button(
                 self.main_frame,
-                text="Volver al inicio",
+                text="Back to the beginning",
                 command=lambda: self.make_choice("first_touch"),
                 style='My.TButton'
             )
             restart_btn.pack(pady=20, anchor='s')
             ending_label.destroy()
-            self.chapter_name = "First Touch";
+            self.chapter_name = "First Touch"
 
             if scene["next_scene"]:
                 self.no_choice_but_next_scene = True
             else:
-                self.no_choice_but_next_scene = False;
-        
-        if self.no_choice_but_next_scene:
-            self.make_choice(scene['next_scene'])
+                self.no_choice_but_next_scene = False
 
+        if self.index >= 0:
+            phrase_label = ttk.Label(
+                self.main_frame,
+                text=self.phrase,
+                font=('Helvetica', 11, 'bold'),
+                background="#c108ff",
+                justify="center",
+                foreground='white'
+            )
+            phrase_label.pack(pady=([30,0]))
+
+        phrase_btn = ttk.Button(
+                    self.main_frame,
+                    text="Press me..",
+                    command=lambda: self.get_phrase(),
+                    style='My.HiddenButton.TButton'
+                )
+        phrase_btn.pack(pady=([0,30]),side="bottom")
+
+    def get_phrase(self):
+        index = random.randint(1, len(self.phrases))
+        self.index = index
+        self.phrase = self.phrases[index]
+        self.show_scene()
+        
     def make_choice(self, next_scene):
         """Maneja la selección de una opción"""
         self.current_scene = next_scene
@@ -150,15 +186,23 @@ class StoryApp:
 
         # Configurar un estilo personalizado para botones
         style.configure('My.TButton', 
-                        font=('Helvetica', 11, 'bold italic'),  # Fuente con negrita y cursiva
-                        foreground='#8B008B',  # Color del texto púrpura oscuro
-                        background='white',  # Fondo (nota: algunos temas ignoran el fondo)
+                        font=('Helvetica', 11, 'bold italic'),
+                        foreground='#8B008B',
+                        background='white',
                         padding=10)  # Espaciado interno
         # Cambios cuando el mouse está encima (hover)
         style.map('Hover.TButton',
                 background=[('active', "#E0E0E0D6")])  # Fondo púrpura oscuro en hover
-
-
+        
+        style.configure('My.HiddenButton.TButton',
+                        font=('Helvetica', 11, 'bold'),
+                        foreground = 'black',
+                        background='#c108ff',
+                        borderwidth=0,
+                        highlightthickness=0
+                       )
+        style.map('My.HiddenButton.TButton',
+                        background=[('active', "#c108ff")])  # Fondo púrpura oscuro en hover
         self.window.mainloop()
 
 def main():

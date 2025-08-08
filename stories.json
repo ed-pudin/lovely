@@ -99,7 +99,7 @@
           "next_scene": "sign_coincidence"
         },
         {
-          "text": "You type: “Yeah… and maybe this time we could call? Just for the game.” She hesitates, then sends: “Sure why not?”",
+          "text": "You type: “Maybe this time we could call? Just for the game.” She then sends: “Sure why not?”",
           "next_scene": "ask_for_call"
         }
       ]
@@ -166,7 +166,7 @@
           "next_scene": "send_pic"
         },
         {
-          "text": "Send your picture right away.",
+          "text": "Send a hot picture",
           "next_scene": "hot_pic"
         }
       ]
