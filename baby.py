@@ -6,6 +6,9 @@ import random
 import sys
 import os
 
+# pyinstaller --onefile --windowed --add-data "recursos;recursos" baby.py 
+#               un archivo sin consola agregar cada archivos;destino 
+
 class StoryApp:
     def __init__(self):
 
@@ -24,7 +27,7 @@ class StoryApp:
         self.show_scene()
     
     
-    def resource_path(relative_path):
+    def resource_path(self, relative_path):
         """ Obtener ruta absoluta al recurso, para PyInstaller """
         try:
             base_path = sys._MEIPASS
@@ -38,7 +41,7 @@ class StoryApp:
         self.window = tk.Tk()
         
         try:
-            route = self.resource_path('./recursos/heart.png')
+            route = self.resource_path('recursos/heart.png')
             icon = PhotoImage(file=route)
             self.window.iconphoto(True, icon)
         except:
@@ -63,7 +66,7 @@ class StoryApp:
     def load_story(self):
         """Carga la historia desde el archivo JSON"""
         try:
-            route = self.resource_path('./recursos/stories.json')
+            route = self.resource_path('recursos/stories.json')
             with open(route, 'r', encoding='utf-8') as f:
                 self.story_data = json.load(f)
         except FileNotFoundError:
@@ -75,7 +78,7 @@ class StoryApp:
     
     def load_phrases(self):
         try:
-            route = self.resource_path('./recursos/phrases.json')
+            route = self.resource_path('recursos/phrases.json')
             with open(route, 'r', encoding='utf-8') as p:
                 self.phrases = json.load(p)
         except FileNotFoundError:
