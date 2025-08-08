@@ -3,9 +3,13 @@ from tkinter import ttk
 from tkinter import PhotoImage, messagebox
 import json
 import random
+import sys
+import os
 
 class StoryApp:
     def __init__(self):
+
+        
         self.window_width =700
         self.window_height = 500
         self.current_scene = "first_touch"
@@ -19,12 +23,23 @@ class StoryApp:
         self.load_story()
         self.show_scene()
     
+    
+    def resource_path(relative_path):
+        """ Obtener ruta absoluta al recurso, para PyInstaller """
+        try:
+            base_path = sys._MEIPASS
+        except Exception:
+            base_path = os.path.abspath(".")
+
+        return os.path.join(base_path, relative_path)
+
     def setup_window(self):
         """Configura la ventana principal"""
         self.window = tk.Tk()
         
         try:
-            icon = PhotoImage(file='./recursos/heart.png')
+            route = self.resource_path('./recursos/heart.png')
+            icon = PhotoImage(file=route)
             self.window.iconphoto(True, icon)
         except:
             print("No se encontró el icono, usando predeterminado")
@@ -44,12 +59,12 @@ class StoryApp:
         # Frame principal
         self.main_frame = tk.Frame(self.window, padx=10, background="#c108ff")
         self.main_frame.pack(fill=tk.BOTH, expand=True)
-        
     
     def load_story(self):
         """Carga la historia desde el archivo JSON"""
         try:
-            with open('./recursos/stories.json', 'r', encoding='utf-8') as f:
+            route = self.resource_path('./recursos/stories.json')
+            with open(route, 'r', encoding='utf-8') as f:
                 self.story_data = json.load(f)
         except FileNotFoundError:
             messagebox.showerror("Error", "No se encontró el archivo stories.json")
@@ -60,7 +75,8 @@ class StoryApp:
     
     def load_phrases(self):
         try:
-            with open('./recursos/phrases.json', 'r', encoding='utf-8') as p:
+            route = self.resource_path('./recursos/phrases.json')
+            with open(route, 'r', encoding='utf-8') as p:
                 self.phrases = json.load(p)
         except FileNotFoundError:
             messagebox.showerror("Error", "No se encontró el archivo stories.json")
