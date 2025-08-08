@@ -24,7 +24,7 @@ class StoryApp:
         self.window = tk.Tk()
         
         try:
-            icon = PhotoImage(file='heart.png')
+            icon = PhotoImage(file='./recursos/heart.png')
             self.window.iconphoto(True, icon)
         except:
             print("No se encontró el icono, usando predeterminado")
@@ -49,7 +49,7 @@ class StoryApp:
     def load_story(self):
         """Carga la historia desde el archivo JSON"""
         try:
-            with open('stories.json', 'r', encoding='utf-8') as f:
+            with open('./recursos/stories.json', 'r', encoding='utf-8') as f:
                 self.story_data = json.load(f)
         except FileNotFoundError:
             messagebox.showerror("Error", "No se encontró el archivo stories.json")
@@ -60,7 +60,7 @@ class StoryApp:
     
     def load_phrases(self):
         try:
-            with open('phrases.json', 'r', encoding='utf-8') as p:
+            with open('./recursos/phrases.json', 'r', encoding='utf-8') as p:
                 self.phrases = json.load(p)
         except FileNotFoundError:
             messagebox.showerror("Error", "No se encontró el archivo stories.json")
